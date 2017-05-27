@@ -103,6 +103,9 @@ public class Persona {
         this.idfoto = idfoto;
     }
 
+    public  void guardar(Context contexto){
+        guardarRemoto(contexto);
+    }
     public void guardarRemoto(final Context contexto){
         new AsyncTask<Void, Void, String>(){
 
