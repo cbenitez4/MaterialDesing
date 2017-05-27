@@ -133,7 +133,7 @@ public class Persona {
                     builder.append("&");
                     builder.append("foto");
                     builder.append("=");
-                    builder.append(URLEncoder.encode(urlfoto,"UTF-8"));
+                    builder.append(URLEncoder.encode(getUrlfoto(),"UTF-8"));
                     builder.append("&");
                     builder.append("cedula");
                     builder.append("=");
@@ -195,7 +195,7 @@ public class Persona {
                     JSONObject jsonObject = new JSONObject(s);
                     boolean success = jsonObject.getBoolean("success");
                     if(success){
-                        urlfoto = jsonObject.getString("urlfoto");
+                        urlfoto = jsonObject.getString("foto");
                         guardarLocal(contexto);
 
                     }
