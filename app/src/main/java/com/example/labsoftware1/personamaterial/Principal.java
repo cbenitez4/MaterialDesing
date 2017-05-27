@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -52,6 +53,14 @@ public class Principal extends AppCompatActivity implements AdaptadorPersona.OnP
 
     @Override
     public void onPersonaClick(Persona p) {
+        //finish();
+        Intent i = new Intent(Principal.this,DetallePersona.class);
+        Bundle b = new Bundle();
+        b.putString("nombre",p.getNombre());
+        b.putString("apellido",p.getApellido());
+        b.putString("urlfoto",p.getUrlfoto());
 
+        i.putExtra("datos",b);
+        startActivity(i);
     }
 }
